@@ -18,7 +18,8 @@ The provided Python script **project1.py** uses the **psycopg2** library to quer
 - PostgreSQL
 - psycopg2 library
 - Please download news database: https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip
-- Import news database: e.g. $ psql -d news -f news_sql_database_file.sql
+- Import news database: e.g. $ psql -d news -f newsdata.sql
 ### Usage
-1. run the command first: create view log_view as select path,count(*) as num from log group by path having path!='/' order by num desc;
-2. run the command: python project1.py
+1. connect the news database with the command: psql news
+2. run the command first to create a view: create view log_view as select path,count(*) as num from log group by path having path!='/' order by num desc;
+3. disconnect the database, and run the command: $python project1.py
